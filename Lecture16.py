@@ -12,11 +12,17 @@ s = input('Enter list length: ')
 size = int(s)
 
 # -- Make a sorted list of random numbers
-numlist = [ 0 for _ in range(int(size))]
+#numlist = [ 0 for _ in range(int(size))]
+#total = 0
+#for i in range(size):
+#    total = total + int(random.random() * 5)
+#    numlist[i] = total
+
+numlist = []
 total = 0
 for i in range(size):
     total = total + int(random.random() * 5)
-    numlist[i] = total
+    numlist.append(total)
 
 # -- Run and time one of the algorithms
 done = False
@@ -30,4 +36,4 @@ while not done:
         found = linear_search(val, numlist)
         t2 = time.time()
         print("Result is " + str(found))
-        print("Time: " + str(t2 - t1))
+        print("Time: {:08.6f}".format(t2 - t1))
